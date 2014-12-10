@@ -1,0 +1,20 @@
+{
+  "name": "The Texting Tree",
+  "description": "A small Python application that controls an internet-connected Christmas Tree. Input: Twilio SMS. Output: Spark API call.",
+  "repository": "https://github.com/willdages/The-Texting-Tree",
+  "success_url": "/deployed",
+  "env": {
+    "PYTHONUNBUFFERED" : "True",
+    "SPARK_ACCESS_TOKEN": {
+      "description": "Your Spark Access Token. You can find this in the Spark Web IDE in 'Settings'",
+      "required": true
+    },
+    "SPARK_CORE_ID": {
+      "description": "Your Spark Core ID. You can find this in the Spark Web IDE in 'Cores'",
+      "required": true
+    }
+  },
+  "scripts": {
+    "postdeploy": "heroku config:set HEROKU_URL=$(heroku info -s | grep web_url | cut -d= -f2)"
+  }
+}
