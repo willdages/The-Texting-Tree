@@ -16,8 +16,5 @@
       "description": "Your Spark Core ID. You can find this in the Spark Web IDE in 'Cores'",
       "required": true
     }
-  },
-  "scripts": {
-    "postdeploy": "heroku config:set HEROKU_URL=$(heroku info -s | grep web_url | cut -d= -f2)"
   }
 }

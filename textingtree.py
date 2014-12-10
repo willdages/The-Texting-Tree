@@ -15,12 +15,11 @@ def merry_christmas():
 def deployed():
   # Used to help with automatic deployments using the Heroku Button
   # Upon successful deployment, this URL is brought up
-  url = '{0}/sms'.format(os.environ['HEROKU_URL'])
-  instructions = 'Great! This application is ready. Now you just need to hook it \
+  return '<h1>Great! This application is ready.</h1><p>Now you just need to hook it \
   up to your Twilio account. Go to your Twilio dashboard, click on your phone number \
   to get to its settings page, and enter this in the Message Request URL Field: \
-  <strong>{0}</strong> (also make sure the method is set to HTTP POST)'.format(url)
-  return instructions
+  <strong id="js-url"></strong> (also make sure the method is set to HTTP POST).</p>\
+  <script>document.getElementById("js-url").innerHTML = document.URL.split("deployed")[0] + "sms"</script>'
 
 
 @app.route('/sms', methods=['POST'])
