@@ -4,7 +4,10 @@
   "repository": "https://github.com/willdages/The-Texting-Tree",
   "success_url": "/deployed",
   "env": {
-    "PYTHONUNBUFFERED" : "True",
+    "PYTHONUNBUFFERED" : {
+      "description": "Lets logging show up in the Heroku logs",
+      "value": "True"
+    },
     "SPARK_ACCESS_TOKEN": {
       "description": "Your Spark Access Token. You can find this in the Spark Web IDE in 'Settings'",
       "required": true
